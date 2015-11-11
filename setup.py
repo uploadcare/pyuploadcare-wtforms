@@ -9,7 +9,9 @@ with open('README.rst') as readme_file:
     readme = readme_file.read()
 
 requirements = [
-    'WTForms~=2.0',
+    'six',
+    'WTForms>=2.0',
+    'pyuploadcare>=1',
 ]
 
 test_requirements = [
