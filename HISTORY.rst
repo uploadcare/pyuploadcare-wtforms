@@ -2,3 +2,5 @@
 ~~~
 
 - First release
+- Added FileWidget, FileField, ImageField, FileGroupField
+- Tests

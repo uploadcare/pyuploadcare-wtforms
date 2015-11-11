@@ -56,8 +56,8 @@ class FileFieldTestCase(unittest.TestCase):
         form = self.form_class()
         html = form[self.field_name]()
 
-        self.assertTrue('data-public-key="{}"'.format(conf.pub_key) in html)
-        self.assertTrue('data-upload-base-url="{}"'.format(conf.upload_base)
+        self.assertTrue('data-public-key="{0}"'.format(conf.pub_key) in html)
+        self.assertTrue('data-upload-base-url="{0}"'.format(conf.upload_base)
                         in html)
         self.assertTrue('role="uploadcare-uploader"'.format(conf.pub_key)
                         in html)
@@ -83,7 +83,7 @@ class ImageFieldTestCase(FileFieldTestCase):
         field = form.image_field_cropped
         html = field()
 
-        self.assertTrue('data-crop="{}"'.format(field.manual_crop) in html)
+        self.assertTrue('data-crop="{0}"'.format(field.manual_crop) in html)
 
 
 class FileGroupTestForm(Form):
