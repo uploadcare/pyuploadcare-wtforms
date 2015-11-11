@@ -49,7 +49,7 @@ class FileField(Field):
             raise ValueError('Value must be type of string')
 
     def process_formdata(self, valuelist):
-        if valuelist:
+        if valuelist and valuelist[0]:
             self.data = self.object_type(valuelist[0])
         else:
             self.data = None

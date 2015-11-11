@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pyuploadcare-SqlAlchemy Demo Page</title>
+  <script>UPLOADCARE_PUBLIC_KEY = "demopublickey";</script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://ucarecdn.com/widget/2.5.5/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>
+</head>
+<body>
+  {% with messages=get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <form action="." method="POST">
+    {% for field in form %}
+      <p>
+        {{ field.label }}
+        {{ field }}
+      </p>
+    {% endfor %}
+    <button>Submit</button>
+  </form>
+
+
+  <h3>Uploaded photos</h3>
+
+  {% if form.image.data %}
+    <h3>Image</h3>
+    {% with info=form.image.data.info() %}
+      <p>{{ info.original_filename }}</p>
+      <p>width: {{ info.image_info.width }} / height: {{ info.image_info.height }}</p>
+      <p>image type: {{ info.mime_type }}</p>
+      <p><img src="{{ form.image.data.cdn_url }}" /></p>
+      <p>All attributes:</p>
+      <code>{{ info }}</code>
+    {% endwith %}
+  {% endif %}
+
+  {% if form.image_cropped.data %}
+    <h3>Image Cropped</h3>
+    {% with info=form.image_cropped.data.info() %}
+      <p>{{ info.original_filename }}</p>
+      <p>width: {{ info.image_info.width }} / height: {{ info.image_info.height }}</p>
+      <p>image type: {{ info.mime_type }}</p>
+      <p><img src="{{ form.image_cropped.data.cdn_url }}" /></p>
+      <p>All attributes:</p>
+      <code>{{ info }}</code>
+    {% endwith %}
+  {% endif %}
+</body>
+</html>
