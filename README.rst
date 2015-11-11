@@ -20,8 +20,50 @@ Installation
 Usage
 -----
 
-TODO
+Package provides several fields for ``WTForms`` which made integration with Uploadcare little more easily:
 
+* ``FileWidget``
+* ``FileField``
+* ``ImageField`` - you can set manual cropping for uploaded images
+* ``FileGroupField``
+
+In common case for usage you need::
+
+* use one of these fields in your form like this:
+
+.. code:: python
+
+    # your_app/forms.py
+
+    from wtforms import Form
+    from pyuploadcare_wtforms import ImageField
+
+    class YourSuperForm(Form):
+        image = ImageField(manual_crop='200x200')
+        ...
+
+* set up keys:
+
+.. code:: python
+
+    # your_project_config.py
+    from pyuploadcare import conf
+
+    conf.pub_key = 'demopublickey'
+    conf.secret = 'demoprivatekey'
+
+
+* put script to `your templates <https://uploadcare.com/quick_start/>`_:
+
+.. code:: html
+
+    <script src="https://ucarecdn.com/widget/2.5.5/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>
+
+Look at `that simplest example <https://github.com/uploadcare/pyuploadcare-wtforms/tree/master/example>`_ for getting quick start. You can easily install it locally by:
+
+.. code:: bash
+
+    $ make run_example
 
 Contributing
 ------------
