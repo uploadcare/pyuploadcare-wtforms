@@ -19,7 +19,7 @@ clean-build:
 	rm -fr .eggs/
 	rm -fr venv_temp/
 	find . -name '*.egg-info' -not -path '*venv_18*' -exec rm -fr {} +
-	find . -name '*.egg' -not -path '*venv_18*' -exec rm -f {} +
+	find . -name '*.egg' -not -path '*venv_18*' -exec rm -fr {} +
 
 clean-pyc:
 	find . -name '*.pyc' -exec rm -f {} +
