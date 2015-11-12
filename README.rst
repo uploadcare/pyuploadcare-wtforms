@@ -27,9 +27,9 @@ Package provides several fields for ``WTForms`` which made integration with Uplo
 * ``ImageField`` - you can set manual cropping for uploaded images
 * ``FileGroupField``
 
-In common case for usage you need::
+In common case for usage you need:
 
-* use one of these fields in your form like this:
+* Use one of these fields in your form like this:
 
 .. code:: python
 
@@ -42,7 +42,7 @@ In common case for usage you need::
         image = ImageField(manual_crop='200x200')
         ...
 
-* set up keys:
+* Set up keys:
 
 .. code:: python
 
@@ -53,7 +53,7 @@ In common case for usage you need::
     conf.secret = 'demoprivatekey'
 
 
-* put script to `your templates <https://uploadcare.com/quick_start/>`_:
+* Put script to `your templates <https://uploadcare.com/quick_start/>`_:
 
 .. code:: html
 
