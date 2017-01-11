@@ -68,6 +68,12 @@ Look at `that simplest example <https://github.com/uploadcare/pyuploadcare-wtfor
 Contributing
 ------------
 
+Thanks to those who have already contributed,
+
+- `@zerc`_
+
+Below we explain how to contribute efficiently.
+
 1. Fork the ``pyuploadcare-wtforms`` repo on GitHub.
 2. Clone your fork locally:
 
@@ -107,3 +113,16 @@ Contributing
     $ git push origin name-of-your-bugfix-or-feature
 
 7. Submit a pull request through the GitHub website.
+
+Security issues
+---------------
+
+If you think you ran into something in Uploadcare libraries
+which might have security implications, please hit us up at
+`bugbounty@uploadcare.com`_ or Hackerone.
+
+We'll contact you personally in a short time to fix an issue
+through co-op and prior to any public disclosure.
+
+.. _@zerc: https://github.com/zerc
+.. _bugbounty@uploadcare.com: mailto:bugbounty@uploadcare.com
